@@ -202,7 +202,7 @@ Przy kątach 45<α<90 wyznaczamy następny rząd, nie kolumnę.
 ![Image](./images/bresenham.jpg "algorytm brezenhama")  
 ```
 1. 0 < m < 1, początek rysowania - lewy koniec odcinka  
-2. Pomocnicze wielkości: Δx = x2 - x1, Δy = y2 - y1, b = 2Δy - 2Δx, p0 = 2Δy - Δx  
+2. Pomocnicze wielkości: Δx = x2 - x1, Δy = y2 - y1, a = 2Δy, b = 2Δy - 2Δx, p0 = 2Δy - Δx  
 3. Dla kolejnych x(k) zaczynając od k = 0, sprawdzić znak p(k):  
 	p(k) < 0 => następny piksel to ( x(k+1), y(k) ), a p(k+1) = p(k) + a  
 	p(k) >= 0 => następny piksel to ( x(k+1), y(k+1) ), a p(k+1) = p(k) + b
@@ -224,7 +224,7 @@ Przy kątach 45<α<90 wyznaczamy następny rząd, nie kolumnę.
 1. Punkt początkowy (0, r), początkowa wartość parametru decyzyjnego p0 = 5/4 - r  
 2. Dla kolejnych kolumn xk, zaczynając od k = 0, należy sprawdzić znak pk:  
 	jeżeli pk < 0, następny piksel ma współrzędne (x(k+1), y(k)), a p(k+1) = pk + 2x(k+1) + 1  
-	jeżeli pk >= 0, następny piksel ma współrzędne (x(k+1), y(k-1)), a p(k+1) = pk + 2x(k+1) + 1 - 2x(k+1)  
+	jeżeli pk >= 0, następny piksel ma współrzędne (x(k+1), y(k-1)), a p(k+1) = pk + 2x(k+1) + 1 - 2y(k+1)  
 3. Wyznaczyć siedem pikseli o współrzędnych wynikających z symetrii okręgu
 4. Powtarzać kroki 2 i 3 aż x = y
 ```
